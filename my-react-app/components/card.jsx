@@ -8,6 +8,8 @@ export default function Card(props){
                         <h1>
                             {props.cardname}
                         </h1>
+                        <p>Following:{props.cardfollowing}</p>
+                        <p>Followers:{props.cardfollowers}</p>
                     </div>
                     
             </div>

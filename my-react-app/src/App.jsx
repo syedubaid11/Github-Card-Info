@@ -6,12 +6,14 @@ import Header from '../components/header'
 import { useEffect } from 'react'
 import Card from '../components/card'
 import axios from 'axios'
+import Searchbar from '../components/searchbar'
 
 function App() {
   const [username,setUsername]=useState('')
   const [data,setData]=useState('')
   const [image,setImage]=useState('')
   const [following,setFollowing]=useState('')
+  const [followers,setFollowers]=useState('')
 
   
 useEffect(() => {
@@ -19,12 +21,14 @@ useEffect(() => {
       setData(response.data);
       setUsername(response.data.login)
       setImage(response.data.avatar_url)
-      setFollowing(response.data.url.following)
+      setFollowing(response.data.following)
+      setFollowers(response.data.followers)
 
       //
       
       console.log(response.data)
-      
+      console.log(response.data.following)
+      console.log(response.data.followers)
       
     });
   }, []);
@@ -32,8 +36,12 @@ useEffect(() => {
     <>
     <Header/>
     <Card cardname={username}
-          cardimage={image
-          }/>
+          cardimage={image}
+          cardfollowing={following}
+          cardfollowers={followers}
+          />
+    <Searchbar/>
+
 
 
 

@@ -1,0 +1,21 @@
+.search-container{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.card-content{
+  width: max-content;
+  border:1px solid black;
+
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+}
